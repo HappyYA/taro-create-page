@@ -9,6 +9,7 @@
   "categories": [
     "Other"
   ],
+  "icon": "images/logo.png",
   "activationEvents": [
     "onStartupFinished"
   ],
@@ -66,7 +67,7 @@
   "dependencies": {
     "fs-extra": "^11.2.0"
   },
-  "publisher": "北极白熊",
+  "publisher": "lijinya",
   "homepage": "https://github.com/HappyYA/taro-create-page/blob/master/README.md",
   "repository": {
     "type": "git",
