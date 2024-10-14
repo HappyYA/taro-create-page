@@ -15,6 +15,15 @@ export function checkDirExist(dir: string): boolean {
 export function getDirList(dir: string): string[] {
   return fss.readdirSync(dir);
 }
+/**生成路由 */
+export const createRouter = (pageRoot: string) => {
+  //往上查找距离最近的src目录
+  console.log('pageRoot', pageRoot);
+};
+/**首字母转换为大写 */
+export function capitalizeFirstLetter(str: string) {
+  return str.charAt(0).toUpperCase() + str.slice(1);
+}
 /**创建页面 */
 export const createPage = (pageRoot: string, pageName: string) => {
   //tsx文件路径
@@ -25,7 +34,8 @@ export const createPage = (pageRoot: string, pageName: string) => {
   const configPath = `${pageRoot}/index.config.ts`;
   //写入文件
   fss.ensureDirSync(pageRoot);
-  fss.writeFileSync(tsxPath, reactPageTemplate(pageName));
+  const capitalizedPageName = capitalizeFirstLetter(pageName);
+  fss.writeFileSync(tsxPath, reactPageTemplate(capitalizedPageName));
   fss.writeFileSync(scssPath, styleTemplate());
   fss.writeFileSync(configPath, wxConfigTemplate());
   vscode.window.showInformationMessage(`${pageName}页面创建成功`);
@@ -41,8 +51,7 @@ export const createComponent = (
   const scssPath = `${componentRoot}/index.module.scss`;
   //写入文件 把组件名称首字母改为大写
   fss.ensureDirSync(componentRoot);
-  const capitalizedComponentName =
-    componentName.charAt(0).toUpperCase() + componentName.slice(1);
+  const capitalizedComponentName = capitalizeFirstLetter(componentName);
   fss.writeFileSync(tsxPath, reactComponentTemplate(capitalizedComponentName));
   fss.writeFileSync(scssPath, styleTemplate());
   vscode.window.showInformationMessage(
