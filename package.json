@@ -67,9 +67,9 @@
     "fs-extra": "^11.2.0"
   },
   "publisher": "北极白熊",
-  "homepage": "https://github.com/duxuyang/taro-pages/blob/main/README.md",
+  "homepage": "https://github.com/HappyYA/taro-create-page/blob/master/README.md",
   "repository": {
     "type": "git",
-    "url": "https://github.com/duxuyang/taro-pages.git"
+    "url": "https://github.com/HappyYA/taro-create-page.git"
   }
 }
