@@ -2,7 +2,7 @@
   "name": "taro-create-page",
   "displayName": "taro-create-page",
   "description": "taro页面创建器",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "engines": {
     "vscode": "^1.94.0"
   },
